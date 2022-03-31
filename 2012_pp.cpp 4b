@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int suma_min = INT_MAX;
+    int suma_max = INT_MIN;
+    string a, lmax, lmin;
+    ifstream f("cyfry.txt");
+    int suma;
+    while (f>>a){
+        suma = 0;
+        for(int i = 0; i<a.size(); i++) suma += a[i]-48;
+            if (suma>suma_max)
+        {
+            suma_max = suma;
+            lmax = a;
+        }
+        if (suma<suma_min)
+        {
+            suma_min = suma;
+            lmin = a;
+        }
+        cout << lmax << ' ' << lmin;
+    }
+}
